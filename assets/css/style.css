@@ -1,0 +1,396 @@
+
+body{
+    margin: 0;
+    font-size: 1.0rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    /* background-color: #f5f8fa; */
+}
+
+.navbar-laravel
+{
+    /* box-shadow: 0 2px 4px rgba(0,0,0,.04); */
+    background-color: #e3f2fd;
+}
+
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.dashboard
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.body-content
+{
+  padding-top: 2.0rem;
+  padding-bottom: 2.0rem;
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0; 
+}
+
+
+.dashboard .row
+{
+    margin-left: 0;
+    margin-right: 0; 
+
+    /* add */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(0,0,0,.125);
+    /* border-radius: .25rem; */
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.dashboard .row_header
+{
+    margin-left: 0;
+    margin-right: 0; 
+
+    /* add */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-bottom: 0;
+    /* border-radius: .25rem; */
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    background-color: rgba(0,0,0,.03);
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    padding: 20px 0;
+    height: 84px;
+    transition: all 0.5s;
+    z-index: 997;
+    background: rgba(0,0,0,.03);
+    box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  #header #logo h1 {
+    font-size: 42px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+
+  #header #logo h1 a {
+    color: rgba(0,0,0,.03);
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #212529;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  #header #logo h1 a span {
+    color: #212529;
+  }
+
+  @media (max-width: 768px) {
+    #header {
+      padding: 20px 0;
+      height: 74px;
+    }
+    #header #logo h1 {
+      font-size: 34px;
+    }
+  }
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.nav-menu, .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .nav-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+  
+  .nav-menu li {
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .nav-menu > li {
+    float: left;
+  }
+  
+  .nav-menu li:hover > ul,
+  .nav-menu li.sfHover > ul {
+    display: block;
+  }
+  
+  .nav-menu ul ul {
+    top: 0;
+    left: 100%;
+  }
+  
+  .nav-menu ul li {
+    min-width: 180px;
+  }
+  
+  /* Nav Menu Arrows */
+  .sf-arrows .sf-with-ul {
+    padding-right: 22px;
+  }
+  
+  .sf-arrows .sf-with-ul:after {
+    content: "\f107";
+    position: absolute;
+    right: 8px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  .sf-arrows ul .sf-with-ul:after {
+    content: "\f105";
+  }
+
+  /* Nav Meu Container */
+#nav-menu-container {
+    float: right;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #nav-menu-container {
+      display: none;
+    }
+  }
+  
+  /* Nav Meu Styling */
+  .nav-menu a {
+    padding: 10px 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: #212529;
+    /*font-family: "Raleway", sans-serif; */
+    /*font-weight: 700;
+    font-size: 14px; */
+    outline: none;
+  }
+  
+  .nav-menu li:hover > a, .nav-menu .menu-active > a {
+    color: #212529;
+  }
+  
+  .nav-menu > li {
+    margin-left: 10px;
+  }
+  
+  .nav-menu ul {
+    margin: 4px 0 0 0;
+    padding: 10px;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    background: #fff;
+  }
+  
+  .nav-menu ul li {
+    transition: 0.3s;
+  }
+  
+  .nav-menu ul li a {
+    padding: 10px;
+    color: #333;
+    transition: 0.3s;
+    display: block;
+    font-size: 13px;
+    text-transform: none;
+  }
+  
+  .nav-menu ul li:hover > a {
+    color: #212529;
+  }
+  
+  .nav-menu ul ul {
+    margin: 0;
+  }
+  
+  /* Mobile Nav Toggle */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 20px 20px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+}
+
+#mobile-nav-toggle i {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  #mobile-nav-toggle {
+    display: inline;
+  }
+}
+
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(52, 59, 64, 0.9);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
+}
+
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#mobile-nav ul li {
+  position: relative;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+}
+
+#mobile-nav ul li a:hover {
+  color: #fff;
+}
+
+#mobile-nav ul li li {
+  padding-left: 30px;
+}
+
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #50d8af;
+}
+
+#mobile-nav ul .menu-item-active {
+  color: #50d8af;
+}
+
+#mobile-body-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(52, 59, 64, 0.9);
+  display: none;
+}
+
+/* Mobile Nav body classes */
+body.mobile-nav-active {
+  overflow: hidden;
+}
+
+body.mobile-nav-active #mobile-nav {
+  left: 0;
+}
+
+body.mobile-nav-active #mobile-nav-toggle {
+  color: #fff;
+}
+
+
+#sticky-footer {
+   position:fixed;
+   bottom:0;
+   width: 100%;
+}
+
+body {
+    margin:0px;
+    padding-bottom: 2.0rem;
+}
+
+.card-img-top {
+    height: 11vw;
+    object-fit: cover;
+}
+ 
+
+.create-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.create-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#myModal 
+{
+    width: 750px;
+    position: fixed;
+    top: 15%;
+    left: 12%;
+}
+
+table.dataTable thead tr {
+  background-color: rgba(0,0,0,.03);
+}
+
+table.dataTable tbody tr {
+  background-color: white !important;
+}
