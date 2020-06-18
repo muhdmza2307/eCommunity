@@ -2,6 +2,7 @@
    SELECT  a.iNEWSID, a.vaNEWSTITLE, a.vaNEWSBODYSHORT, a.dtDATECREATED,  b.vaUSName
    FROM NWS0001 a WITH (NOLOCK)
    INNER JOIN SEC0001 b WITH (NOLOCK) on b.iUSID = a.iCREATEDBY
+   WHERE a.siSTATUS = 2 --0:pending, 1:deactive, 2:active
    ORDER BY iNEWSID DESC
 </cfquery>
 
@@ -29,12 +30,12 @@
                 <table id="tblNews" width="100%" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th style="width: 20px">No.</th>
+                            <th style="width: 5%">No.</th>
                             <th>Title</th>
                             <!--- <th>Content</th> --->
-                            <th style="width: 120px">Posted By</th>
-                            <th style="width: 120px">Date Posted</th>
-                            <th style="width: 120px">Action</th>
+                            <th style="width: 20%">Posted By</th>
+                            <th style="width: 20%">Date Posted</th>
+                            <th style="width: 10%">Action</th>
                         </tr>
                     </thead>
 
@@ -49,7 +50,9 @@
                                     <!--- <td>#newsList.vaNEWSBODYSHORT#</td> --->
                                     <td>#newsList.vaUSName#</td>
                                     <td>#DateTimeFormat(newsList.dtDATECREATED, "dd-mm-yyyy")#</td>
-                                    <td><a href="#request.webroot#index.cfm?fusebox=News&fuseaction=dsp_NewsDetails&inewsId=#newsList.iNEWSID#&#session.urltoken#" type="button" class="btn btn-info">Read More <i class="fa fa-angle-double-right"></i></a></td>                      
+                                    <td>
+                                      <a href="#request.webroot#index.cfm?fusebox=News&fuseaction=dsp_NewsDetails&inewsId=#newsList.iNEWSID#&#session.urltoken#" class="badge badge-info"><i class="fa fa-book" aria-hidden="true"></i> Read More</a>
+                                    </td>                      
                                 </tr>
                             </tbody>
                         </cfloop>

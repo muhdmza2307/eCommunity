@@ -13,7 +13,7 @@
                <div class="col-sm col-xs-12">
                   <div class="form-group">
                      <label for="txtForumsTitle">Title</label>
-                     <input type="text" name="txtForumsTitle" id="txtForumsTitle" class="form-control" chkrequired chklbl="Title">
+                     <input type="text" name="txtForumsTitle" id="txtForumsTitle" class="form-control" chkrequired chklbl="Title" autocomplete=off>
                   </div>
                   <div class="form-group">
                      <label for="txtForumsBody">Body Content :</label>
@@ -22,7 +22,7 @@
                   <br>
                   <div class="form-group">
                      <div class="btn-group" style="float: right">
-                        <button type="button" class="btn btn-danger" style="margin-right:0.5rem;" onclick="location.href='#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList';"><i class="fa fa-angle-double-left"></i> Back</button>
+                        <button type="button" class="btn btn-danger" style="margin-right:0.5rem;" onclick="history.back(-1)"><i class="fa fa-undo"></i> Back</button>
                         <button type="button" id="btnPost" class="btn btn-primary" onclick="SubmitForm()"><i class="fa fa-share"></i> Post</button>
                      </div>
                   </div>

@@ -63,15 +63,6 @@
 
 <body>
 
-<style type="text/css">
-  .bodyList
-  {
-    width: 100%;
-    word-wrap: break-word; 
-    white-space: initial;
-  }
-</style>
-
 	<cfoutput>
       <script type="text/javascript" src="#request.LOGPATH#assets/js/jqplot/jquery.jqplot.js"></script>
       <script type="text/javascript" src="#request.LOGPATH#assets/js/jqplot/plugins/jqplot.barRenderer.js"></script>
@@ -84,20 +75,20 @@
 	<div style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
 	<div class="container">
 		<div class="row"> 
-            <div class="col-xl-3 col-md-6 mb-4">
-		      <div class="card border-left-primary shadow h-100 py-2" style="background-color: #FFDAB9" data-toggle="modal" data-target="#modalDiscount">
+        <div class="col-xl-3 col-md-6 mb-4">
+		      <cfoutput><a class="card border-left-primary shadow h-100 py-2" style="background-color: ##FFDAB9" href="#request.webroot#index.cfm?fusebox=admin&fuseaction=dsp_ApprovalList&#session.urltoken#"></cfoutput>
 		        <div class="card-body">
 		          <div class="row no-gutters align-items-center">
 		            <div class="col mr-2">
 		              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Pending Approval</div>
 		            </div>
 		            <div class="col-auto">
-		              <i class="fa fa-bell fa-2x text-gray-300"></i>
+		              <i class="fa fa-bell fa-2x text-gray-300" style="color: black"></i>
 		              <cfoutput query="pendingCount"><span class="badge badge-danger badge-counter">#pendingCount.iCount#+</span></cfoutput>
 		            </div>
 		          </div>
 		        </div>
-		      </div>
+		      </a>
 		    </div>
 
 		</div>
@@ -106,11 +97,11 @@
 			<div class="col-xl-6 col-lg-5">
               <div class="card shadow mb-4">
               	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-dark">Bar Chart - Active User by Posting</h6>
+                  <h6 class="m-0 font-weight-bold text-dark">Bar Chart - Most active user</h6>
               </div>
                 <div class="card-body text-center" style="background-color: #FFDAB9">
                   <div class="chart-area">
-                    <div id="bar_activeUser" style="height:250px;width:250px;margin-left: auto;margin-right: auto; "></div>
+                    <div id="bar_activeUser" style="height:200px;width:250px;margin-left: auto;margin-right: auto; "></div>
                   </div>
                 </div>
               </div>
@@ -119,11 +110,11 @@
             <div class="col-xl-6 col-lg-5">
               <div class="card shadow mb-4">
               	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-dark">Pie Chart - Percentage by Communication Use</h6>
+                  <h6 class="m-0 font-weight-bold text-dark">Pie Chart - Percentage on Communication Use</h6>
               </div>
                 <div class="card-body text-center" style="background-color: #FFDAB9">
                   <div class="chart-area">
-                    <div id="pie_commType" style="height:250px;width:250px;margin-left: auto;margin-right: auto; "></div>
+                    <div id="pie_commType" style="height:200px;width:250px;margin-left: auto;margin-right: auto; "></div>
                   </div>
                 </div>
               </div>
@@ -132,41 +123,6 @@
 	</div>
 	</div>
 </body>
-
-    <!--Modal: modalDiscount-->
-    <div class="modal fade right" id="modalDiscount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-      aria-hidden="true" data-backdrop="true">
-      <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
-        <!--Content-->
-        <div class="modal-content">
-          <!--Header-->
-          <div class="modal-header" style="background-color: #FFDAB9;">
-            <p class="text-xs font-weight-bold text-dark text-uppercase mb-1">Pending approval
-            </p>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" class="black-text" style="color: ##343a40">&times;</span>
-            </button>
-          </div>
-          <!--Body-->
-          <div class="modal-body">
-            <cfoutput query="pendingApp"><div class="row">
-               <a class="dropdown-item d-flex align-items-center" href="">
-                <div class="mr-3">
-                      <i class="fa fa-newspaper-o"></i>
-                  </div>
-
-                  <div class="bodyList">
-                    <div class="font-weight-bold">#DateTimeFormat(pendingApp.dtDATECREATED, "mmmm dd, yyyy")#</div>
-                    <span class="small text-gray-500">Approval is needed for news shared by #pendingApp.vaUSName# on #DateTimeFormat(pendingApp.dtDATECREATED, "mmmm dd, yyyy")#</span>
-                  </div>
-                </a>
-            </div><hr></cfoutput>
-            <a style="float: right;" href="#request.webroot#index.cfm?fusebox=News&fuseaction=dsp_NewsList&#session.urltoken#" class="btn btn-outline-primary"><i class="fa fa-sign-in"></i> Go to list</a>
-          </div>
-      </div>
-    </div>
-
-
 
 <script type="text/javascript">
 

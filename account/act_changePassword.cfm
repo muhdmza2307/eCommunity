@@ -1,6 +1,6 @@
 <cfparam name="form.txt_CurrentPass" type="string" default = "">
 <cfparam name="form.txt_NewPass" type="string" default = "">
-<cfparam name="form.txt_userId" type="string" default = 0>
+<cfparam name="form.txt_userId" type="integer" default = 0>
 <cfparam name="form.txt_Username" type="string" default = "">
 
 <!--- <cfdump var="#form#" abort> --->

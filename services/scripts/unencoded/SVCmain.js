@@ -35,6 +35,13 @@ function VerifyForm(form){
      if(column != null){
         for(i=0; i<column.length; i++){
             obj = column[i];
+
+            if(obj.name == 'txt_NewPass'){
+            	if( $('#alert').html() != ""){
+            		obj.value = '';
+            	}
+            }
+
             var ver=obj.getAttribute("chkrequired");
             var str=obj.getAttribute("chklbl");
 		    var val=obj.value;
@@ -90,6 +97,73 @@ function SVCpopalert(obj, msg, title){
 
     $('[name =' + inpt + ']').focus(); 
 
+}
+
+// change password
+
+function updateStrengthMeter() {
+  const passwordInput = document.getElementById('txt_NewPass')
+  const reasonsContainer = document.getElementById('alert')
+  const weaknesses = calculatePasswordStrength(passwordInput.value)
+
+  let strength = 100
+  reasonsContainer.innerHTML = ''
+  weaknesses.forEach(weakness => {
+    console.log(weakness);
+    if (weakness == null){
+      return
+    } 
+    const messageElement = document.createElement("div")
+    messageElement.innerHTML = weakness.message
+    reasonsContainer.appendChild(messageElement)
+  })
+}
+
+function calculatePasswordStrength(password) {
+  const weaknesses = []
+  weaknesses.push(lengthWeakness(password))
+  weaknesses.push(lowercaseWeakness(password))
+  weaknesses.push(uppercaseWeakness(password))
+  weaknesses.push(numberWeakness(password))
+  weaknesses.push(specialCharactersWeakness(password))
+  return weaknesses
+}
+
+function lengthWeakness(password) {
+  const length = password.length
+
+  if (length <= 5) {
+    return {
+      message: "<b style='color:red !important'>New password need atleast 6 characters</b><br>",
+    }
+  }
+}
+
+function uppercaseWeakness(password) {
+  return characterTypeWeakness(password, /[A-Z]/g, 'uppercase character')
+
+}
+
+function lowercaseWeakness(password) {
+  return characterTypeWeakness(password, /[a-z]/g, 'lowercase character')
+}
+
+function numberWeakness(password) {
+  return characterTypeWeakness(password, /[0-9]/g, 'number')
+}
+
+function specialCharactersWeakness(password) {
+  return characterTypeWeakness(password, /[^0-9a-zA-Z\s]/g, 'special character')
+}
+
+function characterTypeWeakness(password, regex, type) {
+  const matches = password.match(regex) || []
+
+  if (matches.length === 0) {
+    return {
+      message: "<b style='color:red !important'>New password need atleast one " + type  + "</b><br>",
+    }
+  }
 
 }
 

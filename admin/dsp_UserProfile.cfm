@@ -37,14 +37,14 @@
                                  <div class="form-group row">
                                     <label for="txt_Username" class="col-md-4 col-form-label text-md-right">Username</label>
                                     <div class="col-md-6">
-                                       <input type="text" name="txt_Username" id="txt_Username" class="form-control" value="#userDetail.vaUSName#" disabled="true">
+                                       <input type="text" name="txt_Username" id="txt_Username" class="form-control" value="#userDetail.vaUSName#" disabled="true" chkrequired chklbl="Username" autocomplete=off>
                                     </div>
                                  </div>
 
                                  <div class="form-group row">
                                     <label for="txt_Dob" class="col-md-4 col-form-label text-md-right">Date of Birth</label>
                                     <div class="col-md-6">
-                                      <input type="text" name="txt_Dob" id="txt_Dob" class="form-control" value="#DateTimeFormat(userDetail.dtDATEBIRTH, "dd/mm/yyyy")#">
+                                      <input type="text" name="txt_Dob" id="txt_Dob" class="form-control" value="#DateTimeFormat(userDetail.dtDATEBIRTH, "dd/mm/yyyy")#" autocomplete=off>
                                     </div>
                                  </div>
 
@@ -62,7 +62,7 @@
                                  <div class="form-group row">
                                     <label for="txt_Email" class="col-md-4 col-form-label text-md-right">Email</label>
                                     <div class="col-md-6">
-                                       <input type="email" name="txt_Email" id="txt_Email" class="form-control" value="#userDetail.vaEMAIL#">
+                                       <input type="email" name="txt_Email" id="txt_Email" class="form-control" value="#userDetail.vaEMAIL#" chkrequired chklbl="Email" autocomplete=off>
                                     </div>
                                  </div>
 
@@ -70,7 +70,7 @@
                                     <label for="txt_RoleId" class="col-md-4 col-form-label text-md-right">User Type</label>
                                     <div class="col-md-6">
                                        <cfset roleVal = "#userDetail.iROLEID#">
-                                       <select name="txt_RoleId" id="txt_RoleId" class="form-control"disabled="true">
+                                       <select name="txt_RoleId" id="txt_RoleId" class="form-control"disabled="true" chkrequired chklbl="User Type">
                                           <cfloop query="roleList">
                                              <option value=#roleList.iROLEID#>#roleList.vaROLENAME#</option>
                                           </cfloop>
@@ -81,7 +81,8 @@
                                  <input type="hidden" id="txt_profileId" name="txt_profileId" value="#attributes.profileId#">
 
                                  <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-danger" onclick="history.back(-1)"><i class="fa fa-undo" aria-hidden="true"></i> Back</button>
+                                    <button type="button" class="btn btn-primary" onclick="SubmitForm()"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
                                  </div>
                               </form>
                               </cfoutput>
@@ -95,6 +96,22 @@
       </div>
    </div>
 </body>
+
+<div id="myModal" class="modal">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 id="modalTitle" class="modal-title"></h4>
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div id="modalBody" class="modal-body">       
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
 
 <cfoutput>
    <script>

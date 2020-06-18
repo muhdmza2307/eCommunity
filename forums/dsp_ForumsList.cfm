@@ -2,6 +2,7 @@
    SELECT  a.iFORUMSID, a.vaFORUMSTITLE, a.vaFORUMSBODYSHORT, a.dtDATECREATED, b.vaUSName
    FROM FRM0001 a WITH (NOLOCK)
    INNER JOIN SEC0001 b WITH (NOLOCK) on b.iUSID = a.iCREATEDBY
+   WHERE a.siSTATUS = 0 --0:active, 1:deactive
    ORDER BY iFORUMSID DESC
 </cfquery>
 
@@ -30,12 +31,12 @@
             <table id="tblForums" width="100%" class="table table-striped table-bordered">
                <thead>
                   <tr>
-                     <th style="width: 20px">No.</th>
+                     <th style="width: 5%">No.</th>
                      <th>Title</th>
                      <!--- <th>Content</th> --->
-                     <th style="width: 120px">Posted By</th>
-                     <th style="width: 120px">Date Posted</th>
-                     <th style="width: 120px">Action</th>
+                     <th style="width: 20%">Posted By</th>
+                     <th style="width: 20%">Date Posted</th>
+                     <th style="width: 10%">Action</th>
                   </tr>
                </thead>
 
@@ -50,7 +51,9 @@
                            <!--- <td>#forumsList.vaFORUMSBODYSHORT#</td> --->
                            <td>#forumsList.vaUSName#</td>
                            <td>#DateTimeFormat(forumsList.dtDATECREATED, "dd-mm-yyyy")#</td>
-                           <td><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsDetails&iforumsId=#forumsList.iFORUMSID#&#session.urltoken#" type="button" class="btn btn-info">Read More <i class="fa fa-angle-double-right"></i></a></td>
+                           <td>                            
+                              <a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsDetails&iforumsId=#forumsList.iFORUMSID#&#session.urltoken#" class="badge badge-info"><i class="fa fa-book" aria-hidden="true"></i> Read More</a>
+                           </td>
                         </tr>
                      </tbody>
                   </cfloop>

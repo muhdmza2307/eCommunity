@@ -10,6 +10,8 @@
 	<cfset strPath1 = ExpandPath( "./" ) />
 	<cfset tempUploadPath = "#strPath1#assets/upload/news/temp">
 	<cfset UploadPath = "#strPath1#assets/upload/news">
+    <cfset guid = "#CreateUUID()#">
+    <cfset imgName = "#DateFormat(now(),"YYYY_MM_DD")#_#guid#">
 
 	<!--- create if not path not exist --->
 	<cfif not directoryExists(#uploadPath#)>
@@ -23,15 +25,15 @@
 	<!--- Upload file into server --->
     <cffile
     action="upload"
-    destination="#tempUploadPath#/#Trim(txtNewsTitle)#.jpg"
+    destination="#tempUploadPath#/#Trim(imgName)#.jpg"
     fileField="imgPath"
     nameConflict="overwrite">
 
     <!--- convert to image extension --->
     <cfimage
     action="convert"
-    source="#tempUploadPath#/#Trim(txtNewsTitle)#.jpg"
-    destination="#tempUploadPath#/#Trim(txtNewsTitle)#.jpg"
+    source="#tempUploadPath#/#Trim(imgName)#.jpg"
+    destination="#tempUploadPath#/#Trim(imgName)#.jpg"
     overwrite="true">
 
     <!--- resize image --->
@@ -39,16 +41,16 @@
     action="resize"
     width="500"
     height=""
-    source="#tempUploadPath#/#Trim(txtNewsTitle)#.jpg"
-    destination="#UploadPath#/#Trim(txtNewsTitle)#.jpg"
+    source="#tempUploadPath#/#Trim(imgName)#.jpg"
+    destination="#UploadPath#/#Trim(imgName)#.jpg"
     overwrite="true">
 
     <!--- delete temp file --->
     <cffile
     action = "delete"
-    file = "#tempUploadPath#/#Trim(txtNewsTitle)#.jpg">
+    file = "#tempUploadPath#/#Trim(imgName)#.jpg">
 
-    <cfset uploadImagePath = "assets/upload/news/#Trim(txtNewsTitle)#.jpg">
+    <cfset uploadImagePath = "assets/upload/news/#Trim(imgName)#.jpg">
 </cfif>
 
 <!--- save into db --->

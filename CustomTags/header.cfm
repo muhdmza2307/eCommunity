@@ -3,9 +3,10 @@
 
 <html>
     <head>
-        <title>Pre Mini Project</title>
+
+        <cfoutput><title>#application.appfullname#</title>
         
-        <cfoutput>
+        
           <script src="#request.LOGPATH#assets/js/jquery-3.5.1.js"></script>
           <script src="#request.LOGPATH#assets/js/crypto-js.js"></script>
           <link href="#request.LOGPATH#assets/css/font.css" rel="stylesheet">
@@ -55,8 +56,8 @@
                      <li><a href="#request.webroot#index.cfm?fusebox=admin&fuseaction=dsp_UserList&#session.urltoken#">User</a></li>
                     <li><a href="#request.webroot#index.cfm?fusebox=News&fuseaction=dsp_NewsList&#session.urltoken#">News</a></li>
                     <li><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList&#session.urltoken#">Forum</a></li>
-                    <li><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList&#session.urltoken#">Report</a></li>
-                    <li><a href="" class="btn btn-dark" style="color: white;"><i class="fa fa-power-off"></i> Sign Out</a></li>
+                    <!--- <li><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList&#session.urltoken#">Report</a></li> --->
+                    <li><a href="#request.webroot#index.cfm?fusebox=account&fuseaction=act_logout&#session.urltoken#" class="btn btn-dark" style="color: white;"><i class="fa fa-power-off"></i> Sign Out</a></li>
                   </ul>
                 </nav>
 
@@ -68,7 +69,7 @@
                     <li><a href="#request.webroot#index.cfm?fusebox=News&fuseaction=dsp_NewsList&#session.urltoken#">News</a></li>
                     <li><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList&#session.urltoken#">Forum</a></li>
                     <!--- <li><a href="#request.webroot#index.cfm?fusebox=Forums&fuseaction=dsp_ForumsList">Report</a></li> --->
-                    <li><a href="" class="btn btn-dark" style="color: white;"><i class="fa fa-power-off"></i> Sign Out</a></li>
+                    <li><a href="#request.webroot#index.cfm?fusebox=account&fuseaction=act_logout&#session.urltoken#" class="btn btn-dark" style="color: white;"><i class="fa fa-power-off"></i> Sign Out</a></li>
                   </ul>
                 </nav>
                 

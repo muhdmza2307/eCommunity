@@ -17,4 +17,14 @@
 	<cfmodule template="act_editUserProfile.cfm" AttributeCollection=#Arguments#>
 	<cfreturn>
 </cffunction>
+<cffunction name="act_approveRejectNews" hint="Action to edit news status" returntype="any" output="true">
+	<cfargument name="newsId" required="false" type="numeric"
+		displayname="newsId"
+		hint="">
+		<cfargument name="statusId" required="false" type="numeric"
+		displayname="statusId"
+		hint="">
+	<cfmodule template="act_approveRejectNews.cfm" AttributeCollection=#Arguments#>
+	<cfreturn>
+</cffunction>
 </cfcomponent>

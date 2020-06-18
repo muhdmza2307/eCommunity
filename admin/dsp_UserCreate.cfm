@@ -21,7 +21,7 @@
                                  <div class="form-group row">
                                     <label for="txt_Username" class="col-md-4 col-form-label text-md-right">Username</label>
                                     <div class="col-md-6">
-                                       <input type="text" name="txt_Username" id="txt_Username" class="form-control">
+                                       <input type="text" name="txt_Username" id="txt_Username" class="form-control" chkrequired chklbl="Username" autocomplete=off>
                                     </div>
                                  </div>
 
@@ -37,7 +37,8 @@
                                  </div>
 
                                  <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="button" class="btn btn-danger" onclick="history.back(-1)"><i class="fa fa-undo" aria-hidden="true"></i> Back</button>
+                                    <button type="button" class="btn btn-primary" onclick="SubmitForm()"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
                                  </div>
                               </form>
                            

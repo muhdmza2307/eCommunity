@@ -20,11 +20,12 @@
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
+               <button style="margin-top: 1.5rem !important;" class="btn btn-danger" type="button" onclick="history.back(-1)"><i class="fa fa-undo" aria-hidden="true"></i> Back</button>
                <h1 class="mt-4">#forumsDetails.vaFORUMSTITLE#</h1>
                <p class="lead">
                   Posted by
                   <b>#forumsDetails.vaUSName#</b>
-                  <span class="badge badge-danger">#DateTimeFormat(forumsDetails.dtDATECREATED, "mmmm dd, yyyy")# at #DateTimeFormat(forumsDetails.dtDATECREATED,"HH:nn tt")#</span>
+                  <span class="badge badge-info">#DateTimeFormat(forumsDetails.dtDATECREATED, "mmmm dd, yyyy")# at #DateTimeFormat(forumsDetails.dtDATECREATED,"HH:nn tt")#</span>
                </p>
                <hr>
                #forumsDetails.vaFORUMSBODY#
@@ -51,7 +52,7 @@
                         <p class="lead">
                            Commented by
                            <b>#fComments.vaUSName#</b> 
-                           <span class="badge badge-danger">#DateTimeFormat(fComments.dtDATECREATED, "mmmm dd, yyyy")# at #DateTimeFormat(fComments.dtDATECREATED,"HH:nn tt")#</span><hr>
+                           <span class="badge badge-info">#DateTimeFormat(fComments.dtDATECREATED, "mmmm dd, yyyy")# at #DateTimeFormat(fComments.dtDATECREATED,"HH:nn tt")#</span><hr>
                         </p>
                         #fComments.vaCOMMENTBODY#
                      </div>

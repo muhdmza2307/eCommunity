@@ -394,3 +394,6 @@ table.dataTable thead tr {
 table.dataTable tbody tr {
   background-color: white !important;
 }
+.btn {
+  font-weight: bolder;
+}

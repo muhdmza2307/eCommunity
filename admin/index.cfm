@@ -27,4 +27,12 @@
 	    <cfinclude TEMPLATE="dsp_mainAdmin.cfm">
 	    <cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\footer.cfm">
 	</cfcase>
+	<cfcase value="dsp_ApprovalList">
+		<cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\header.cfm">
+	    <cfinclude TEMPLATE="dsp_ApprovalList.cfm">
+	    <cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\footer.cfm">
+	</cfcase>
+	<cfcase value="act_approveRejectNews">
+	    <cfinvoke component="#Request.APPPATHCFC#eCommunity.admin.index" method="act_approveRejectNews" ArgumentCollection=#Attributes#>
+	</cfcase>
 </cfswitch>

@@ -2,30 +2,20 @@
 <cfparam name="attributes.fuseaction" DEFAULT="">
 
 
-<!--- <cfdump var="#session#"> --->
-
-<!--- <cfdump var="#attributes#"> --->
-
 <cfswitch expression="#attributes.fusebox#">
 	<cfcase value="">
-		<cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\header.cfm">
-	    <cfinclude TEMPLATE="dsp_login.cfm">
-	    <cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\footer.cfm">
+	    <cfinclude TEMPLATE="account/index.cfm">
 	</cfcase>
 	<cfcase value="MICroot">
 		<cfswitch expression="#attributes.fuseaction#">
 			<cfcase value="dsp_login">
-				<cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\header.cfm">
-			    <cfinclude TEMPLATE="dsp_login.cfm">
-			    <cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\footer.cfm">
+			    <cfinclude TEMPLATE="account/index.cfm">
 			</cfcase>
 			<cfcase value="dsp_main">
-				<cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\header.cfm">
-			    <cfinclude TEMPLATE="dsp_main.cfm">
-			    <cfmodule TEMPLATE="#Request.LOGPATH#CustomTags\footer.cfm">
+			    <cfinclude TEMPLATE="account/index.cfm">
 			</cfcase>
 			<cfcase value="dsp_home">
-			    <cfinclude TEMPLATE="dsp_home.cfm">
+			    <cfinclude TEMPLATE="account/index.cfm">
 			</cfcase>
 		</cfswitch>		
 	</cfcase>

@@ -50,7 +50,7 @@
                            <td>#userList.vaGender#</td>
                            <td>#userList.vaEMAIL#</td>
                            <td>#userList.vaROLENAME#</td>
-                           <td><a href="#request.webroot#index.cfm?fusebox=admin&fuseaction=dsp_UserProfile&profileId=#userList.iPROFILEID#&#session.urltoken#" type="button"><i class="fa fa-info-circle"></i> Details</a></td>
+                           <td><a href="#request.webroot#index.cfm?fusebox=admin&fuseaction=dsp_UserProfile&profileId=#userList.iPROFILEID#&#session.urltoken#" class="badge badge-info"><i class="fa fa-search"></i> Details</a></td>
                         </tr>
                      </tbody>
                   </cfloop>
