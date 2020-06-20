@@ -1,4 +1,6 @@
-<cfquery name="newsList" datasource="#request.MTRDSN#">
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+   
+   <cfquery name="newsList" datasource="#request.MTRDSN#">
    SELECT TOP 3 a.vaNEWSIMGFILEPATH, a.vaNEWSTITLE, a.dtDATECREATED, 
    a.vaNEWSBODYSHORT, a.iNEWSID, b.vaUSName FROM NWS0001 a WITH (NOLOCK)
    INNER JOIN SEC0001 b on b.iUSID = a.iCREATEDBY

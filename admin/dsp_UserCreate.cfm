@@ -1,4 +1,6 @@
-<body>
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
+   <body>
    <cfquery name="roleList" datasource="#request.MTRDSN#">
       SELECT iROLEID, vaROLENAME 
       FROM ROL0001 WITH (NOLOCK)

@@ -1,4 +1,6 @@
-<cfif IsDefined("URL.retryId")>
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+    
+    <cfif IsDefined("URL.retryId")>
   <cfset retryId="#URL.retryId#">
 <cfelse>
 	<cfset retryId = 0>

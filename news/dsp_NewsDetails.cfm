@@ -1,3 +1,5 @@
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
 <cfparam name="attributes.inewsId" default = 0>
 
 <cfquery name="newsDetails" datasource="#request.MTRDSN#">

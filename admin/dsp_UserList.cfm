@@ -1,4 +1,6 @@
-<cfquery name="userList" datasource="#request.MTRDSN#">
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
+   <cfquery name="userList" datasource="#request.MTRDSN#">
    SELECT  a.iPROFILEID, CASE WHEN iGENDER = 0  THEN 'Male' ELSE 'Female' END as 'vaGender',
    a.dtDATEBIRTH, a.dtDATECREATED, a.vaEMAIL, b.vaUSName, c.vaROLENAME
    FROM USR_PROF0001 a WITH (NOLOCK)

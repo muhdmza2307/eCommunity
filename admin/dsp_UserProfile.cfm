@@ -1,4 +1,6 @@
-<cfparam name="attributes.profileId" default = 0>
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
+  <cfparam name="attributes.profileId" default = 0>
 
 <body>
 

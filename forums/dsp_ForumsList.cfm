@@ -1,4 +1,6 @@
-<cfquery name="forumsList" datasource="#request.MTRDSN#">
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
+   <cfquery name="forumsList" datasource="#request.MTRDSN#">
    SELECT  a.iFORUMSID, a.vaFORUMSTITLE, a.vaFORUMSBODYSHORT, a.dtDATECREATED, b.vaUSName
    FROM FRM0001 a WITH (NOLOCK)
    INNER JOIN SEC0001 b WITH (NOLOCK) on b.iUSID = a.iCREATEDBY

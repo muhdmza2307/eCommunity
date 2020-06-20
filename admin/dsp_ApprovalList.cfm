@@ -1,4 +1,6 @@
-<cfquery name="appList" datasource="#request.MTRDSN#">
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+
+    <cfquery name="appList" datasource="#request.MTRDSN#">
    SELECT a.iNEWSID, a.vaNEWSTITLE, a.dtDATECREATED, b.vaUSName
     FROM NWS0001 a WITH (NOLOCK)
     INNER JOIN SEC0001 b WITH (NOLOCK) ON b.iUSID = a.iCREATEDBY

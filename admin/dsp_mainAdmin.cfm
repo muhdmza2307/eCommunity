@@ -1,3 +1,5 @@
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+  
 <cfquery name="bar_activeUser" datasource="#request.MTRDSN#">
 	SELECT c.vaUSName, sum(c.total) AS iTOTALCount FROM
 	(SELECT COUNT(a.iCREATEDBY) AS total, b.vaUSName

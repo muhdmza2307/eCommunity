@@ -1,4 +1,5 @@
-
+<cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
+   
 <cfif isdefined("session.vars.roleid")>
    <cfif session.vars.roleid eq 1>
       <cfset Attributes.fusebox="admin">
