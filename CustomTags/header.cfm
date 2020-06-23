@@ -5,26 +5,24 @@
     <head>
 
         <cfoutput><title>#application.appfullname#</title>
-        
-        
-          <script src="#request.LOGPATH#assets/js/jquery-3.5.1.js"></script>
-          <script src="#request.LOGPATH#assets/js/crypto-js.js"></script>
-          <link href="#request.LOGPATH#assets/css/font.css" rel="stylesheet">
-          <link rel="stylesheet" href="#request.LOGPATH#assets/css/bootstrap-4.5.0.css">
-          
-          <script src="#request.LOGPATH#assets/js/popper.js"></script>
-          <script src="#request.LOGPATH#assets/js/bootstrap-4.5.0.js"></script>
-          <script language="JavaScript" type="text/javascript" src="#request.LOGPATH#services/scripts/unencoded/SVCMain.js"></script>
 
+          <link rel="shortcut icon" href="##" />
+        
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQUERY">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="CRYPTO">
+           <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="FONT">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="BOOTSTRAP_CSS">
           
-          
-          <link href="#request.LOGPATH#assets/css/style.css" rel="stylesheet">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="POPPER">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="BOOTSTRAP_JS">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="SVCMain">
 
-          <link href="#request.LOGPATH#assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-          <link href="#request.LOGPATH#assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-          <link href="#request.LOGPATH#assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-          <link href="#request.LOGPATH#assets/vendor/venobox/venobox.css" rel="stylesheet">
-          <link href="#request.LOGPATH#assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="STYLE">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="IONICONS">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="ANIMATE">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="FONTAWESOME">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="VENOBOX">
+          <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="CAROUSEL">
  
         </cfoutput>
     </head>

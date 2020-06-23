@@ -43,15 +43,17 @@ BY          ON          REMARKS
 
 		<cferror Type=Exception Exception=ANY TEMPLATE=dsp_error.cfm>
 		<!--- Uncomment below to reset app vars --->
-		<!---CFLOCK SCOPE=Application Type=Exclusive TimeOut=60>
+		<!--- <CFLOCK SCOPE=Application Type=Exclusive TimeOut=60>
 			<CFSET Application.Setvars=0>
-		</CFLOCK--->
+		</CFLOCK> --->
 		<!--- If first time run, then only create App. DS store --->
 		<CFSET CheckSvrFileVersion=0>
+		<!--- <cfdump var="#application#" abort> --->
 		<cfif Not(StructKeyExists(Application,"SETVARS")) OR Application.SetVars IS 0>
 			<cfinclude TEMPLATE="CustomTags\EPLSETAPPVARS.cfm">
 			<CFSET CheckSvrFileVersion=1>
 		</cfif>
+
 		<!--- Each time DS refreshed, it will alternate DS1 and DS2 to prevent read corruption --->
 		<cfif Application.CURDS IS 1>
 			<cfset REQUEST.DS=Application.DS1>

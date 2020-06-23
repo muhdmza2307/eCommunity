@@ -66,12 +66,12 @@
 <body>
 
 	<cfoutput>
-      <script type="text/javascript" src="#request.LOGPATH#assets/js/jqplot/jquery.jqplot.js"></script>
-      <script type="text/javascript" src="#request.LOGPATH#assets/js/jqplot/plugins/jqplot.barRenderer.js"></script>
-      <script src="#request.LOGPATH#assets/js/jqplot/plugins/jqplot.categoryAxisRenderer.js"></script>
-	  <script src="#request.LOGPATH#assets/js/jqplot/plugins/jqplot.pointLabels.js"></script>
-	  <script src="#request.LOGPATH#assets/js/jqplot/plugins/jqplot.pieRenderer.js"></script>
-      <link rel="stylesheet" type="text/css" href="#request.LOGPATH#assets/css/jqplot/jquery.jqplot.min.css">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQUERY_JQPLOT_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQPLOT_PLUGIN_BARRENDERER_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQPLOT_PLUGIN_AXISRENDERER_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQPLOT_PLUGIN_POINTLABELS_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQPLOT_PLUGIN_PIERENDERER_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQUERY_JQPLOT_CSS">
    </cfoutput>
 
 	<div style="padding-top: 1.5rem; padding-bottom: 1.5rem;">

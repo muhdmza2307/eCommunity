@@ -11,9 +11,9 @@
 <body>
 
     <cfoutput>
-      <script type="text/javascript" src="#request.LOGPATH#assets/js/dataTable/jquery.dataTables.js"></script>
-      <script type="text/javascript" src="#request.LOGPATH#assets/js/dataTable/dataTables.bootstrap4.js"></script>
-      <link rel="stylesheet" type="text/css" href="#request.LOGPATH#assets/css/dataTable/dataTables.bootstrap4.css">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="JQUERY_DATATABLES_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="DATATABLES_BOOTSTRAP_JS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="DATATABLES_BOOTSTRAP_CSS">
    </cfoutput>
 
     <script>

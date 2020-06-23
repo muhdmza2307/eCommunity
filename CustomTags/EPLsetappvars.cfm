@@ -20,6 +20,8 @@ Parameters: None
 	      <cfset CURDSN=CURAPPLICATION.MTRDSN>
 	      <cfset DS=StructNew()>
 
+	      <!--- <cfdump var="#CURAPPLICATION#" abort> --->
+
 	      <cfif IsDefined("CURAPPLICATION.APPPATH")>
 		      <CFIF Not IsDefined("CURAPPLICATION.APPPATHcfc")>
 		      <!--- Figure out APPPATHcfc from APPPPATH by converting / and \ to . and removing leading . --->
@@ -43,22 +45,15 @@ Parameters: None
 		      <cfloop LIST=#StructKeyList(CURAPPLICATION)# INDEX=IDX>
 		         <cfset StructInsert(Application,idx,StructFind(CURAPPLICATION,idx),true)>
 		      </cfloop>
-		      <cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#services/CustomTags/SVCcffunctions.cfm" DS=#DS#>
+		      <!--- <cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#services/CustomTags/SVCcffunctions.cfm" DS=#DS#> --->
+
+		      	<cfmodule TEMPLATE="#CURAPPLICATION.LOGPATH#CustomTags/ECcffunctions.cfm" DS=#DS#>
 		      <!---<cfmodule TEMPLATE="MTRcffunctions.cfm" DS=#DS#> --->
 	      </cfif>
-	      
-	       <!--- <cfdump var="#APPPATHcfc#" abort> --->
-	      
-	      <!--- Set HEADER AND FOOTER override to MOTOR style --->
+
 	      <CFSET StructInsert(DS,"SVC_SETTINGS",StructNew())>
 	      <CFSET StructInsert(DS.SVC_SETTINGS,"HEADER","##Request.Logpath##CustomTags/header.cfm")>
 	      <CFSET StructInsert(DS.SVC_SETTINGS,"FOOTER","##Request.Logpath##CustomTags/footer.cfm")>
-	      <!--- <CFSET StructInsert(DS.SVC_SETTINGS,"MAIL_CUSTOM","MTRmail")>
-	         <CFSET StructInsert(DS.SVC_SETTINGS,"COHEADER","##Request.Logpath##CustomTags/coheader.cfm")>
-	         <CFSET StructInsert(DS.SVC_SETTINGS,"COFOOTER","##Request.Logpath##CustomTags/cofooter.cfm")>
-	         <CFSET StructInsert(DS.SVC_SETTINGS,"COPROFILE_LINK","index.cfm?fusebox=MTRadmin&fuseaction=dsp_coprofile")>
-	         <CFSET StructInsert(DS.SVC_SETTINGS,"UPROFILE_LINK","index.cfm?fusebox=MTRadmin&fuseaction=dsp_userprofile")>
-	         <CFSET StructInsert(DS.SVC_SETTINGS,"HOME_LINK","index.cfm?fusebox=MTRroot&fuseaction=dsp_home")> --->
 	      <cfif IsDefined("APPLICATION.CURDS")>
 	      <cfset APPLICATION.CURDS=APPLICATION.CURDS MOD 2+1>
 	      <cfelse>

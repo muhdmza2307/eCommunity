@@ -45,6 +45,7 @@
 	</cfif>
 	<cfif IsDefined("URL.LF") AND URL.LF IS NOT ""><cfset MURLTOKEN= ListAppend(MURLTOKEN,"LF=#URLEncodedFormat(Request.DS.FN.SVCSanitizeInput(URL.LF,'JS-NQ'))#","&")>
 	</cfif>
+	<!--- <cfdump var="#request.ds#" abort> --->
 	<cfif Request.DS.FN.SVCGetResp() and isdefined('URL.MOBILE')><cfset MURLTOKEN=ListAppend(MURLTOKEN,"MOBILE=#Request.DS.FN.SVCSanitizeInput(URL.MOBILE,'JS-NQ')#","&")>
 	</cfif>
 </cfif>

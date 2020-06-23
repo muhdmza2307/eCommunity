@@ -1,8 +1,6 @@
 <cfmodule template="#request.apppath#services/CustomTags\SVCDISABLEDIRECT.cfm" Path="#GetCurrentTemplatePath()#">
 
-  <cfparam name="attributes.iforumsId" default = 0>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> 
+<cfparam name="attributes.iforumsId" default = 0>
 
 <cfquery name="forumsDetails" datasource="#request.MTRDSN#">
       SELECT a.iFORUMSID, a.vaFORUMSTITLE, a.vaFORUMSBODY, a.dtDATECREATED, b.vaUSName
@@ -18,6 +16,11 @@
    </cfquery>
 
 <body>  
+  <cfoutput>
+     <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="SUMMERNOTE_CSS">
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="SUMMERNOTE_JS">
+  </cfoutput>
+  
    <cfoutput query="forumsDetails">
       <div class="container">
          <div class="row">

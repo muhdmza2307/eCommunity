@@ -11,7 +11,7 @@
 
 <body>
 <cfoutput>
-      <script language="JavaScript" type="text/javascript" src="#request.LOGPATH#services/scripts/unencoded/SVCLogin.js"></script>
+      <cfmodule TEMPLATE="#request.LOGPATH#/CustomTags/ECADDFILE.cfm" Fname="SVCLOGIN">
 </cfoutput>
 
 

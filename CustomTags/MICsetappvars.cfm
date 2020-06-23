@@ -210,8 +210,9 @@ WHERE a.siSTATUS=0 ORDER BY a.igcoid/*, ct.vaclmtype*/, b.vaDESC
 
 <!--- Set Application Variables --->
 <cfif IsDefined("CURAPPLICATION.APPPATH")><!--- and IsDefined("CURAPPLICATION.MICPATH")--->
-<cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#services/CustomTags/SVCcffunctions.cfm" DS=#DS#>
-<cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#MInsCore/CustomTags/MICcffunctions.cfm" DS=#DS#>
+<!--- <cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#services/CustomTags/SVCcffunctions.cfm" DS=#DS#>
+<cfmodule TEMPLATE="#CURAPPLICATION.CFPREFIX##CURAPPLICATION.APPPATH#MInsCore/CustomTags/MICcffunctions.cfm" DS=#DS#> --->
+	<cfmodule TEMPLATE="#request.LOGPATH#CustomTags/ECcffunctions.cfm" DS=#DS#>
 <CFIF Not IsDefined("CURAPPLICATION.APPPATHcfc")>
 	<!--- Figure out APPPATHcfc from APPPPATH by converting / and \ to . and removing leading . --->
 	<CFIF IsDefined("CURAPPLICATION.CFPREFIX")>
